@@ -7,7 +7,6 @@ class ContactForm extends React.Component {
       isSubmitted: false,
       email: '',
       hasEmailError: false,
-      /* contentとhasContentErrorというstateを追加してください */
       content : '',
       hasContentError: false,
       
@@ -23,7 +22,6 @@ class ContactForm extends React.Component {
     });
   }
 
-  /* handleContentChangeという名前のメソッドを定義してください */
   handleContentChange(event) {
     const inputValue = event.target.value;
     const isEmpty = inputValue === '';
@@ -47,10 +45,8 @@ class ContactForm extends React.Component {
       );
     }
     
-    /* 変数contentErrorTextを定義してください */
     let contentErrorText;
     
-    /* hasContentErrorを条件にしたif文を作成してください */
     if(this.state.hasContentError) {
       contentErrorText = (
         <p className='contact-message-error'>
@@ -76,12 +72,10 @@ class ContactForm extends React.Component {
           />
           {emailErrorText}
           <p>お問い合わせ内容（必須）</p>
-          {/* stateのvalueの値と、onChangeイベントを追加してください */}
           <textarea
             value={this.state.content}
             onChange={(event) => {this.handleContentChange(event)}}
           />
-          {/* contentErrorTextを表示してください */}
           {contentErrorText}
           
           <input
